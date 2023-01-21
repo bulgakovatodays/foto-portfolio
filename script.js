@@ -260,27 +260,16 @@ document.addEventListener('DOMContentLoaded', () => {
         body: formData
       });
   
-      let result = await response.json();
-  
-      alert(result.message);
-
-      //Код из ВИДЕО фрилансера:
-    //   let response = await fetch('sendmail.php', {
-    //     method: 'POST',
-    //     body: formData
-    //   });
-    //   if (response.ok) {
-    //     let result = await response.json();
-    //     alert(result.message);
-    //     form.reset();
-    //   } else {
-    //     alert('Упс! К сожалению, что-то пошло не так.');
-    //   }
-    // } else {
-    //   alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
+      if (response.ok) {
+        let result = await response.json();
+        alert(result.message);
+        form.reset();
+      } else {
+        alert('Упс! К сожалению, что-то пошло не так.');
+      }
+    } else {
+      alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
     }
-  }
-
-  
+  } 
 })
 
