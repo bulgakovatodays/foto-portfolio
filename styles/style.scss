@@ -750,25 +750,29 @@ body {
           background-color: hsla(0, 0%, 0%, 0);
           color: $txt-color;
           @include standart-text;
+          outline: none;
         }
 
         .form__input::-moz-placeholder { //в Firefox
           color: $decor-color; 
         }
+        
         .form__input::-webkit-input-placeholder { //В Safari и Chrome
           color: $decor-color; 
         }
+        
         .placeholder-messege::-moz-placeholder { //в Firefox
           color: $decor-color; 
           position: relative;
           top: -25px;
         }
+        
         .placeholder-messege::-webkit-input-placeholder { //В Safari и Chrome
-          color: $decor-color; 
+          //color: $decor-color; 
           position: relative;
           top: -25px;
         }
-
+        
         .form__button {
           width: 220px;
           height: 55px;

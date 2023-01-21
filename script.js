@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //вешаем слушатель на форму
   const form = document.getElementById('form');
 
+  //проверяем валидацию полей по мере их заполнения
   form.addEventListener('input', function (e) {
     let target = e.target;
 
@@ -224,39 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
    }, false);
 
-
-   // КОД ИЗ ВИДЕО:
-
-
-  form.addEventListener('submit', formSend);
-
-  async function formSend(event) {
-    event.preventDefault();
-
-    let rights = formValidate(form);
-
-    let formData = new FormData(form);
-
-    if (rights === 3) {
-      console.log(rights);
-      let response = await fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      });
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        form.reset();
-      } else {
-        alert('К сожалению, где-то ошибка.');
-      }
-    } else {
-      alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
-    }
-  }
-
-  function formValidate(form) {
-    let error = 0;
+  //функция проверки полей при попытке отправки формы
+   function formValidate(form) {
     let right = 0;
     let formNes = document.querySelectorAll('.form__input');
 
@@ -272,34 +242,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-   // КОД ИЗ ВИДЕО:
-  //   formNes.forEach(input => {
-  //     formRemoveError(input);
-  //     if (input.classList.contains('_email')) {
-  //       if (emailTest(input)){
-  //         formAddError(input);
-  //         console.log(input.classList[1] + " error!");
-  //         error++;
-  //       }
-  //     } else if (input.classList.contains('_phone')){
-  //       if (input.value.length !== 10) {
-  //         formAddError(input);
-  //         console.log(input.classList[1] + " error!");
-  //         error++;
-  //       }
-  //     } else if (input.value === ''){
-  //       formAddError(input);
-  //       console.log(input.classList[1] + " error!");
-  //       error++;
-  //     }
-  //   })
-  // }
+  form.addEventListener('submit', formSend);
+
+  async function formSend(event) {
+    event.preventDefault();
+
+    let rights = formValidate(form);
+
+    let formData = new FormData(form);
 
 
-  // form.addEventListener('click', () => {
-  //   let target = event.target;
-  //   console.log(target);
-  // })
+    if (rights === 3) {
+      console.log("Форма заполнена. Можно отправлять!");
 
+      let response = await fetch('./sendmail.php', {
+        method: 'POST',
+        body: formData
+      });
+  
+      let result = await response.json();
+  
+      alert(result.message);
+
+      //Код из ВИДЕО фрилансера:
+    //   let response = await fetch('sendmail.php', {
+    //     method: 'POST',
+    //     body: formData
+    //   });
+    //   if (response.ok) {
+    //     let result = await response.json();
+    //     alert(result.message);
+    //     form.reset();
+    //   } else {
+    //     alert('Упс! К сожалению, что-то пошло не так.');
+    //   }
+    // } else {
+    //   alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
+    }
+  }
+
+  
 })
 
