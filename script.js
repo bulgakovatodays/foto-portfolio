@@ -121,6 +121,7 @@ links.forEach(link => {
   });
 })
 
+
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // кнопка - "напиши" - переключает на цены
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -354,13 +355,13 @@ play.addEventListener('click', () => {
     isPlay = true;
   }
   //console.log(isPlay);
+
   play.classList.toggle("video__bottom-active");
 });
 
 // цена - выезжает поп-ап с заявкой на звонок: имя/телефон/желаемая дата съемки
 
 // контакт - запрос на звонок
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -436,7 +437,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (input.classList.contains('_right')) {
           right++;
         } else {
+
           //console.log(input.classList[1] + " error!");
+
           formAddError(input);
         }
       });
@@ -474,8 +477,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } 
 })
-
-
 
 
 // ХХХХХХХХХХХХХХХХХХ
@@ -772,4 +773,5 @@ bottomsLeng.forEach(point => {
   });
 
 });
+
 
