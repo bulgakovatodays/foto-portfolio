@@ -121,12 +121,214 @@ links.forEach(link => {
   });
 })
 
-// перевод на русский
 
-// кнопка - "найми" - переключает на цены
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// кнопка - "напиши" - переключает на цены
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-// переключаются сезоны и меняются картинки
+const heroButtom = document.querySelector(".signature__button");
+heroButtom.addEventListener('click', () => {
+  console.log('Go to form!');
+  window.location.hash="form";
+})
 
+
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// переключаются сезоны и меняются картинки (слайдер)
+// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+const themesPoints = document.querySelectorAll(".themes-list__point");
+const errows = document.querySelectorAll('.errow');
+const slider = document.querySelectorAll('.slider');
+const sliderBloks = document.querySelectorAll('.slider__blok');
+const slider1Imgs = document.querySelectorAll('.slider1__img');
+const slider2Imgs = document.querySelectorAll('.slider2__img');
+const slider3Imgs = document.querySelectorAll('.slider3__img');
+
+const width = document.documentElement.clientWidth;
+//console.log(width);
+
+let numFotoOnSlide = 6;
+if (width < 750) {
+  numFotoOnSlide = 2;
+} else if (width < 1000) {
+  numFotoOnSlide = 4;
+} else {
+  numFotoOnSlide = 6;
+}
+//console.log(numFotoOnSlide);
+
+
+const massivFotos = [];
+let category = ['family', 'portrait', 'reportage'];
+let chousenCategory;
+
+
+function makeShotList() {
+
+  let length = massivFotos.length;
+  for (let index = 0; index < length; index++) {
+    massivFotos.pop();
+  }
+
+  for (let index = 0; index < 18; index++) { //тут должно быть 18
+    massivFotos.push(`./assets/bigfoto/${chousenCategory}/foto${index+1}.jpg`);
+  }
+  //console.log(massivFotos);
+}
+
+function makeBigList() {
+
+  let length = massivFotos.length;
+  for (let index = 0; index < length; index++) {
+    massivFotos.pop();
+  }
+
+  for (let index = 0; index < 12; index++) {
+    massivFotos.push(`./assets/bigfoto/${category[0]}/foto${index+1}.jpg`);
+    massivFotos.push(`./assets/bigfoto/${category[1]}/foto${index+1}.jpg`);
+    massivFotos.push(`./assets/bigfoto/${category[2]}/foto${index+1}.jpg`);
+  }
+  //console.log(massivFotos);
+}
+makeBigList();
+
+//выбор категории и формирование списка фото
+themesPoints.forEach(element => {
+  
+  element.addEventListener('click', () => {
+
+    themesPoints.forEach(element => {
+      element.classList.remove('chouse-point');
+    });
+    element.classList.add('chouse-point');
+
+    if (element.textContent === 'Family') {
+      chousenCategory = category[0];
+      console.log(chousenCategory);
+
+      makeShotList();
+
+    } else if (element.textContent === 'Portrait') {
+      chousenCategory = category[1];
+      console.log(chousenCategory);
+
+      makeShotList();
+
+    } else if (element.textContent === 'Reportage') {
+      chousenCategory = category[2];
+      console.log(chousenCategory);
+
+      makeShotList();
+
+    } else {
+      console.log('all');
+
+      makeBigList();
+    }
+
+    addImage();
+  })
+});
+
+function addImage() {
+  let number = 0;
+
+  for (let index = 0; index < numFotoOnSlide; index++) {
+    slider1Imgs[index].src = massivFotos[index];
+    slider2Imgs[index].src = massivFotos[index+numFotoOnSlide];
+    slider3Imgs[index].src = massivFotos[index+2*numFotoOnSlide];
+  }
+}
+addImage();
+
+function goToShadows() {
+  slider1Imgs.forEach(element => {
+    element.style.opacity = 0;
+  });
+
+  slider2Imgs.forEach(element => {
+    element.style.opacity = 0;
+  });
+
+  slider3Imgs.forEach(element => {
+    element.style.opacity = 0;
+  });
+}
+
+let count = 0;
+//console.log('first blok!');
+errows[0].addEventListener('click', () => {
+  
+  //console.log('назад');
+
+  goToShadows();
+
+  if (count === 0) {
+    count = 2;
+    //console.log('third blok!'); // 2
+    slider3Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+
+  } else if (count === 2) {
+    count--;
+    //console.log('second blok!'); // 1
+    slider2Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+    
+  } else if (count === 1) {
+    count--;
+    //console.log('first blok!'); //0
+    slider1Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+  }  
+  //console.log("count = " + count);
+});
+
+errows[1].addEventListener('click', () => {
+  //console.log('вперед');
+  goToShadows();
+
+  if (count === 0) {
+    //console.log('second blok!');
+    slider2Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+    count++;
+
+  } else if (count === 1) {
+    //console.log('third blok!');
+    slider3Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+    count++;
+  } else if (count === 2) {
+    //console.log('first blok!');
+    slider1Imgs.forEach(element => {
+      element.style.opacity = 1;
+    });
+    count = 0;
+  }
+  //console.log("count = " + count);
+
+
+})
+
+/*
+numFotoOnSlide
+massivFotos
+slider1Imgs
+slider2Imgs
+slider3Imgs
+*/
+
+
+
+// слайдер все: собираем каталог по 2шт из каждой папки
+// слайдер тематический - выбираем определенную папку
 
 // XXXXXXXXXXXXXXXXX
 // запускается видео
@@ -152,7 +354,8 @@ play.addEventListener('click', () => {
     
     isPlay = true;
   }
-  console.log(isPlay);
+  //console.log(isPlay);
+
   play.classList.toggle("video__bottom-active");
 });
 
@@ -234,7 +437,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (input.classList.contains('_right')) {
           right++;
         } else {
-          console.log(input.classList[1] + " error!");
+
+          //console.log(input.classList[1] + " error!");
+
           formAddError(input);
         }
       });
@@ -260,27 +465,313 @@ document.addEventListener('DOMContentLoaded', () => {
         body: formData
       });
   
-      let result = await response.json();
-  
-      alert(result.message);
-
-      //Код из ВИДЕО фрилансера:
-    //   let response = await fetch('sendmail.php', {
-    //     method: 'POST',
-    //     body: formData
-    //   });
-    //   if (response.ok) {
-    //     let result = await response.json();
-    //     alert(result.message);
-    //     form.reset();
-    //   } else {
-    //     alert('Упс! К сожалению, что-то пошло не так.');
-    //   }
-    // } else {
-    //   alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
+      if (response.ok) {
+        let result = await response.json();
+        alert(result.message);
+        form.reset();
+      } else {
+        alert('Упс! К сожалению, что-то пошло не так.');
+      }
+    } else {
+      alert('К сожалению, где-то ошибка. Проверьте, пожалуйста, все поля');
     }
-  }
-
-  
+  } 
 })
+
+
+// ХХХХХХХХХХХХХХХХХХ
+// перевод на русский
+// ХХХХХХХХХХХХХХХХХХ
+
+
+let contentVariants = {
+  ".nav-link": [
+    [
+    "Skills", 
+    "Portfolio", 
+    "Video", 
+    "Price", 
+    "Contacts"
+    ], 
+    [
+      "Навыки",
+      "Портфолио",
+      "Видео",
+      "Цены",
+      "Контакты"
+    ]
+  ],
+
+
+  ".leng__var": [
+    ["en", "/" , "ru"],
+    ["англ", "/", "рус"]
+  ],
+
+
+  ".signature__title": [
+    ["Svetlana Mormul"],
+    ["Светлана Мормуль"]
+  ],
+
+  ".signature__txt": [
+    ["Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Svetlana Mormul."],
+    ["Сохраните искренние эмоции, романтические чувства и счастливые моменты жизни вместе с профессиональным фотографом Светланой Мормуль."]
+    ],
+  
+  ".signature__button": [
+    ["Book a photo shoot"],
+    ["Заказать фотосессию"]
+  ],
+  
+  ".section__title": [
+    [
+      "Skills", 
+      "Portfolio", 
+      "Video",
+      "Price", 
+      "Contact me"
+      ],
+      [
+        "Навыки",
+        "Портфолио",
+        "Видео",
+        "Цена",
+        "Свяжитесь со мной"
+      ]
+  ],
+
+
+  ".skill__title": [
+    [
+    "Digital photography", 
+    "Video shooting", 
+    "Retouch", 
+    "Audio"
+    ],
+    [
+      "Цифровая фотография",
+      "Видеосъемка",
+      "Ретушь",
+      "Аудио"
+    ]
+  ],
+
+  ".skill__txt": [
+    [
+    "High-quality photos in the studio and on the nature",
+    "Capture your moments so that they always stay with you",
+    "I strive to make photography surpass reality",
+    "Professional sounds recording for video, advertising, portfolio"
+    ],
+    [
+      "Качественные фото в студии и на природе",
+      "Ловите свои моменты, чтобы они всегда оставались с вами",
+      "Я стремлюсь к тому, чтобы фотография превзошла реальность",
+      "Профессиональная звукозапись для видео, рекламы, портфолио"
+    ]
+  ],
+
+  ".themes-list__point": [
+    [
+    "All",
+    "Family",
+    "Portrait",
+    "Reportage"
+    ], 
+    [
+      "Все",
+      "Семья",
+      "Портрет",
+      "Репортаж"
+    ]
+  ],
+
+
+  ".prise-variant__title": [
+    [
+    "Minimum",
+    "Standard",
+    "Premium"
+    ],
+    [
+      "Минимум",
+      "Стандарт",
+      "Премиум"
+    ]
+  ],
+
+
+  ".prise1": [
+    [
+    "One location",
+    "120 photos in color",
+    "12 photos in retouch",
+    "Readiness 2-3 month",
+    "Make up, visage"
+    ],
+    [
+      "Одно место",
+      "120 фотографий в цвете",
+      "12 фото в ретуши",
+      "Готовность 2-3 месяца",
+      "Макияж, визаж"
+    ]
+  ],
+
+  ".prise2": [
+    [
+    "One or two locations",
+    "200 photos in color",
+    "20 photos in retouch",
+    "Readiness 1-2 month", 
+    "Make up, visage"
+    ],
+    [
+      "Одна или две локации",
+      "200 фотографий в цвете",
+      "20 фото в ретуши",
+      "Готовность 1-2 месяца",
+      "Макияж, визаж"
+    ]
+  ],
+
+  ".prise3": [
+    [
+    "Three locations or more",
+    "300 photos in color",
+    "50 photos in retouch",
+    "Readiness 1 month" ,
+    "Make up, visage, hairstyle"
+    ], 
+    [
+      "Три локации и более",
+      "300 фотографий в цвете",
+      "50 фото в ретуши",
+      "Готовность 1 месяц" ,
+      "Макияж, визаж, прическа"
+    ]
+  ],
+
+  ".prise-variant__button": [
+    "Order shooting", 
+    "Заказать"
+  ],
+
+  ".form__input": [
+    [
+    "E-mail",
+    "Phone (format: 3803456789)",
+    "Message"
+    ],     
+    [
+      "Электронный адрес",
+      "Телефон (в формате: 3803456789)",
+      "Ваше сообщение"
+    ]
+  ],
+
+  ".form__button": [
+    "Send message", 
+    "Отправить сообщение"
+  ],
+
+  ".link__title": [
+    "The social networks:",
+    "Социальные сети:"
+  ]
+}
+
+const bottomsLeng = document.querySelectorAll(".leng__var");
+
+const navLinks = document.querySelectorAll(".nav-link");
+const heroName = document.querySelector(".signature__title");
+const heroTxt = document.querySelector(".signature__txt");
+
+const sectionTitles = document.querySelectorAll(".section__title");
+const skillTitles = document.querySelectorAll(".skill__title");
+const skillTxt = document.querySelectorAll(".skill__txt");
+
+const priseTitles = document.querySelectorAll(".prise-variant__title");
+const prise1 = document.querySelectorAll(".prise1");
+const prise2 = document.querySelectorAll(".prise2");
+const prise3 = document.querySelectorAll(".prise3");
+const priseButtons = document.querySelectorAll(".prise-variant__button");
+const formInputs = document.querySelectorAll(".form__input");
+const formButton = document.querySelector(".form__button");
+const linkTitle = document.querySelector(".link__title");
+
+bottomsLeng.forEach(point => {
+
+  point.addEventListener('click', () => {
+    //console.log(point.classList[1]);
+    let num = 0;
+    if (point.classList[1] === "lengRu") {
+      //console.log(num);
+      num = 1;
+      bottomsLeng[0].style.color = '#fff';
+      bottomsLeng[2].style.color = '#beaf83';
+      //video.src = './assets/video/foto-stroll.mp4';
+    } else if (point.classList[1] === "lengEn") {
+      num = 0;
+      bottomsLeng[2].style.color = '#fff';
+      bottomsLeng[0].style.color = '#beaf83';
+      //video.src = './assets/video/portfolio.mp4';
+    }
+    
+    heroName.textContent = contentVariants[".signature__title"][num];
+    heroTxt.textContent = contentVariants[".signature__txt"][num]; //1
+    heroButtom.textContent = contentVariants[".signature__button"][num]; //1
+
+    for (let index = 0; index < navLinks.length; index++) {
+      navLinks[index].textContent = contentVariants[".nav-link"][num][index]; 
+    }
+
+    for (let index = 0; index < sectionTitles.length; index++) {
+      sectionTitles[index].textContent = contentVariants[".section__title"][num][index]; 
+    }
+
+    for (let index = 0; index < skillTitles.length; index++) {
+      skillTitles[index].textContent = contentVariants[".skill__title"][num][index]; 
+    }
+    
+    for (let index = 0; index < skillTxt.length; index++) {
+      skillTxt[index].textContent = contentVariants[".skill__txt"][num][index]; 
+    }
+
+    for (let index = 0; index < themesPoints.length; index++) {
+      themesPoints[index].textContent = contentVariants[".themes-list__point"][num][index]; 
+    }
+
+    for (let index = 0; index < priseTitles.length; index++) {
+      priseTitles[index].textContent = contentVariants[".prise-variant__title"][num][index]; 
+    }
+
+    for (let index = 0; index < prise1.length; index++) {
+      prise1[index].textContent = contentVariants[".prise1"][num][index]; 
+    }
+
+    for (let index = 0; index < prise2.length; index++) {
+      prise2[index].textContent = contentVariants[".prise2"][num][index]; 
+    }
+
+    for (let index = 0; index < prise3.length; index++) {
+      prise3[index].textContent = contentVariants[".prise3"][num][index]; 
+    }
+    
+    priseButtons.forEach(element => {
+      element.textContent = contentVariants[".prise-variant__button"][num];
+    });  //8
+
+    for (let index = 0; index < formInputs.length; index++) {
+      formInputs[index].placeholder = contentVariants[".form__input"][num][index]; 
+    }
+
+    formButton.textContent = contentVariants[".form__button"][num];
+
+    linkTitle.textContent = contentVariants[".link__title"][num];
+  });
+
+});
+
 

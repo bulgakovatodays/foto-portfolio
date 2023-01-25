@@ -1,0 +1,192 @@
+{
+  ".nav-link": [
+    [
+    "Skills", 
+    "Portfolio", 
+    "Video", 
+    "Price", 
+    "Contacts"
+    ], 
+    [
+      "Навыки",
+      "Портфолио",
+      "Видео",
+      "Цены",
+      "Контакты"
+    ]
+  ],
+
+
+  ".leng__var": [
+    ["en", "/" , "ru"],
+    ["англ", "/", "рус"]
+  ],
+
+
+  ".signature__title": [
+    ["Svetlana Mormul"],
+    ["Светлана Мормуль"]
+  ],
+
+  ".signature__txt": [
+    ["Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Svetlana Mormul."],
+    ["Сохраните искренние эмоции, романтические чувства и счастливые моменты жизни вместе с профессиональным фотографом Светланой Мормуль."]
+    ],
+  
+  ".signature__button": [
+    ["Hire me"],
+    ["Связаться со мной"]
+  ],
+  
+  ".section__title": [
+    [
+    "Skills", 
+    "Portfolio", 
+    "Video",
+    "Price", 
+    "Contact me"
+    ],
+    [
+      "Навыки",
+      "Портфолио",
+      "Видео",
+      "Цена",
+      "Свяжитесь со мной"
+    ]
+  ],
+
+
+  ".skill__title": [
+    [
+      "Digital photography", 
+      "Video shooting", 
+      "Retouch", 
+      "Audio"
+    ],
+    [
+      "Цифровая фотография",
+      "Видеосъемка",
+      "Ретушь",
+      "Аудио"
+    ]
+  ],
+
+  ".skill__txt": [
+    [
+      "High-quality photos in the studio and on the nature",
+      "Capture your moments so that they always stay with you",
+      "I strive to make photography surpass reality",
+      "Professional sounds recording for video, advertising, portfolio"
+    ],
+    [
+      "Качественные фото в студии и на природе",
+      "Ловите свои моменты, чтобы они всегда оставались с вами",
+      "Я стремлюсь к тому, чтобы фотография превзошла реальность",
+      "Профессиональная звукозапись для видео, рекламы, портфолио"
+    ]
+  ],
+
+  ".themes-list__point": [
+    [
+      "All",
+      "Family",
+      "Portrait",
+      "Reportage"
+    ], 
+    [
+      "Все",
+      "Семья",
+      "Портрет",
+      "Репортаж"
+    ]
+  ],
+
+
+  ".prise-variant__title": [
+    [
+      "Standard",
+      "Premium",
+      "Gold"
+    ],
+    [
+      "Стандарт",
+      "Премиум",
+      "Золото"
+    ]
+  ],
+
+
+  ".prise1": [
+    [
+      "One location",
+      "120 photos in color",
+      "12 photos in retouch",
+      "Readiness 2-3 month",
+      "Make up, visage"
+    ],
+    [
+      "Одно место",
+      "120 фотографий в цвете",
+      "12 фото в ретуши",
+      "Готовность 2-3 месяца",
+      "Макияж, визаж"
+    ]
+  ],
+
+  ".prise2": [
+    [
+      "One or two locations",
+      "200 photos in color",
+      "20 photos in retouch",
+      "Readiness 1-2 month", 
+      "Make up, visage"
+    ],
+    [
+      "Одна или две локации",
+      "200 фотографий в цвете",
+      "20 фото в ретуши",
+      "Готовность 1-2 месяца",
+      "Макияж, визаж"
+    ]
+  ],
+
+  ".prise3": [
+    [
+      "Three locations or more",
+      "300 photos in color",
+      "50 photos in retouch",
+      "Readiness 1 month" ,
+      "Make up, visage, hairstyle"
+    ], 
+    [
+      "Три локации и более",
+      "300 фотографий в цвете",
+      "50 фото в ретуши",
+      "Готовность 1 месяц" ,
+      "Макияж, визаж, прическа"
+    ]
+  ],
+
+  ".prise-variant__button": [
+    "Order shooting", 
+    "Заказать фотосъемку"
+  ],
+
+  ".form__input": [
+    [
+      "E-mail",
+      "Phone (format: 3803456789)",
+      "Message"
+    ],     
+    [
+      "Электронный адрес",
+      "Телефон (в формате: 3803456789)",
+      "Ваше сообщение"
+    ]
+  ],
+
+  ".form__button": [
+    "Send message", 
+    "Отправить сообщение"
+  ]
+}

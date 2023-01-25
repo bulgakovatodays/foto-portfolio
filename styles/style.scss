@@ -1,7 +1,8 @@
 $txt-color: #fff; 
 $color: #ffffff00; 
 $bg-color: #000;
-$decor-color: rgba(189, 174, 130, 1);// rgba(189, 174, 130, 1);
+$decor-color: #beaf83;// rgba(189, 174, 130, 1);
+
 
 @mixin standart-text {
   font: {
@@ -65,7 +66,9 @@ body {
   margin: auto;
   position: fixed;
   z-index: 2;
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 90%);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  z-index: 4;
+
 }
 .logo {
   position: relative;
@@ -78,7 +81,7 @@ body {
 }
 
 .navig {
-  width: 37.5%;
+  width: 50%;
   position: relative;
   right: 1.4%;
   align-items: center;
@@ -87,13 +90,15 @@ body {
 }
 @media (min-width: 800px) and (max-width: 1200px) {
   .navig {
-    width: 55%;
+    width: 70%;
     position: relative;
     right: 68px;
   }
 }
 
-@media (min-width: 600px) and (max-width: 799.9px) {
+
+@media (min-width: 600px) and (max-width: 835.9px) {
+
   .navig {
     width: 20%;
     position: relative;
@@ -114,7 +119,9 @@ body {
   align-items: center;
 }
 
-@media (max-width: 799.9px) {
+
+@media (max-width: 835.9px) {
+
   .nav {
     position: absolute;
     top: 0px;
@@ -171,7 +178,9 @@ body {
   justify-content: space-between;
   gap: 8px;
 }
-@media (max-width: 799.9px) {
+
+@media (max-width: 835.9px) {
+
   .leng {
     width: 51%;
   }
@@ -190,13 +199,17 @@ body {
   color: $decor-color;
 }
 
-@media screen and (min-width: 800px) {
+
+@media screen and (min-width: 836px) {
+
   .burger {
     display: none;
   }
 }
 
-@media (max-width: 799.9px) {
+
+@media (max-width: 835.9px) {
+
   .burger {
     display: block;
     width: 50px;
@@ -265,7 +278,9 @@ body {
   margin-top: 100px;
 }
 
-@media (min-width: 650px) and (max-width: 799.9px) {
+
+@media (min-width: 650px) and (max-width: 999.9px) {
+
   .section {
     margin-top: 60px;
   }
@@ -301,13 +316,17 @@ body {
 }
 .signature {
   position: absolute;
-  left: 5.5%;
-  top: 27.5%;
+
+  right: 5.5%;
+  top: 20%;
   width: 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 @media (max-width: 800px) {
   .signature {
-    width: 51%;
+    width: 38%;
     left: 8%;
     top: 29%;
   }
@@ -316,21 +335,25 @@ body {
 .signature__title {
   @include other-text;
   font-size: 60px;
-  line-height: 120px;
+  line-height: 60px;
+  margin-bottom: 35px;
+  text-align: center;
 }
 
 @media (max-width: 925px) {
   .signature__title {
     font-size: 35px;
-    line-height: 50px;
+    line-height: 33px;
+    margin-bottom: 0px;
   }
 }
 
 .signature__txt {
   @include standart-text;
-  line-height: 40px;
+  line-height: 35px;
   position: relative;
   top: 10.5px;
+  text-align: justify;
 }
 @media (min-width: 650px) and (max-width: 800px) {
   .signature__txt {
@@ -342,6 +365,7 @@ body {
 
 @media (max-width: 649.9px) {
   .signature__txt {
+    display: none;
     line-height: 15px;
     position: relative;
     font-size: 3vw;
@@ -349,28 +373,34 @@ body {
 }
 
 .signature__button {
-  width: 45%;
+  width: 85%;
   height: 16.5%;
   position: relative;
   bottom: 0px;
-  background-color: $decor-color;
+  background-color: #beaf83;
   margin-top: 37px;
   display: flex;
   justify-content: center;
-  color: $bg-color;
+  color: #000;
+  align-self: center;
+  font-size: 2.5vw;
+  cursor: pointer;
 }
+
 @media (min-width: 700px) and (max-width: 800px) {
   .signature__button {
-    width: 56%;
+    width: 75%;
     height: 22%;
     margin-top: 89px;
+    font-size: 2.5vw;
   }
 }
 
 @media (max-width: 699.9px) {
   .signature__button {
-    width: 56%;
+    width: 100%;
     height: 22%;
+    font-size: 3.25vw;
   }
 }
 
@@ -443,6 +473,7 @@ body {
     @media (max-width: 1000px) {
       .skill__title {
         margin: 25px 0 15px 0;
+        //line-height: 100%;
       }
     }
 
@@ -511,19 +542,105 @@ body {
 }
 
 .slider {
-  width: 97%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  width: 85%;
+  display: flex;
+  gap: 1%;
+  position: relative;
+  left: 1.5%;
 }
 
-@media (max-width: 1000px) {
-  .slider {
-    width: 58.5%;
-    display: flex;
-    flex-direction: column;
-    gap: 27px;
+  .slider__blok {
+    width: 97%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
+
+  .slider__errows {
+    position: absolute;
+    width: 97%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    top: 60%;
+  }
+
+@media (min-width: 750.1px) and (max-width: 1000px) {
+  .slider {
+    width: 86%;
+    display: block;
+    gap: 1%;
+    position: relative;
+    transition: 1s all linear;
+  }
+
+  .slider__blok {
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    gap: 25px;
+    transition: 3s all;
+  }
+
+  .box-1,
+  .box-2,
+  .box-3 {
+    left: 0;
+    top: 50%;                        
+    transform: translate(0, -50%);
+  }
+
+  .slider-box.img3 {
+    display: none;
+  }
+
+  .slider__errows {
+    top: 59.5%;
+  }
+}
+
+@media (max-width: 750px) {
+  .slider {
+    width: 86%;
+    display: block;
+    gap: 1%;
+    position: relative;
+    transition: 1s all linear;
+  }
+
+  .slider__blok {
+    width: 97%;
+    position: absolute;
+    top: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .slider-box.img3,
+  .slider-box.img2 {
+    display: none;
+  }
+
+  .slider__errows {
+    width: 92%;
+    top: 59.5%;
+  }
+}
+
+.slider__blok.unvisible-box {
+  position: relative;
+}
+
+.slider__img.unvisible-img {
+  opacity: 0;
+}
+.slider2__img,
+.slider3__img {
+  opacity: 0;
 }
 
 .slider-box {
@@ -673,6 +790,7 @@ body {
         width: 50%;
         margin: 39px auto 0px auto;
         background-color: $decor-color;
+        cursor: pointer;
       }
 
       @media (max-width: 1000px) {
@@ -686,6 +804,10 @@ body {
       }
       //XXXXXXXXXXXXXXXXXXXXXXXX 
 
+      .contact-foto {
+        width: 99.5%;
+      }
+
       @media (max-width: 1100px) {
         .section-contacts {
           margin-top: 80px;
@@ -693,15 +815,16 @@ body {
         
       }
       .form {
-        width: 450px;
+        color: $bg-color;
+        width: 40%;
         position: absolute;
-        right: 20px;
-        top: 60px;
+        left: 1%;
+        top: 3%;
       }
 
       @media (max-width: 1100px) {
         .form {
-          width: 58.5%;
+          width: 45%;
           right: 20.75%;
           top: 8%;
 
@@ -715,6 +838,7 @@ body {
           background-color: rgba(0, 0, 0, 0);
           //padding-left: 0px;
           margin-bottom: 40px;
+          color: $bg-color;
         }
 
         @media (max-width: 1100px) {
@@ -725,11 +849,12 @@ body {
         }
         
         .form__item {
+          //color: $bg-color;
           width: 100%;
           height: 50px;
           margin: 20px 0;
           background-color: hsla(0, 0%, 0%, 0);
-          border: 3px solid $decor-color;
+          border: 3px solid $bg-color;
         }
 
         @media (max-width: 1100px) {
@@ -748,25 +873,25 @@ body {
           height: 100%;
           padding-left: 20px;
           background-color: hsla(0, 0%, 0%, 0);
-          color: $txt-color;
+          color: $bg-color;
           @include standart-text;
           outline: none;
         }
 
         .form__input::-moz-placeholder { //в Firefox
-          color: $decor-color; 
+          color: $bg-color; 
         }
         
         .form__input::-webkit-input-placeholder { //В Safari и Chrome
-          color: $decor-color; 
+          color: $bg-color; 
         }
         
         .placeholder-messege::-moz-placeholder { //в Firefox
-          color: $decor-color; 
+          color: $bg-color; 
           position: relative;
           top: -25px;
         }
-        
+
         .placeholder-messege::-webkit-input-placeholder { //В Safari и Chrome
           //color: $decor-color; 
           position: relative;
@@ -774,16 +899,19 @@ body {
         }
         
         .form__button {
-          width: 220px;
+          width: 70%;
           height: 55px;
           background-color: $decor-color;
           @include standart-text;
           margin-top: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          cursor: pointer;
         }
 
         @media (max-width: 1100px) {
           .form__button {
-            width: 220px;
+            width: 70%;
             margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
@@ -793,6 +921,53 @@ body {
         .form__button:hover {
           color: $txt-color;
         }
+
+        .link__title {
+          font-size: 3vw;
+          line-height: 55px;
+          background-color: rgba(0, 0, 0, 0); 
+          color: $bg-color; 
+          padding: 0; 
+          text-align: center;
+          margin: 5% 0;
+        }
+@media (max-width: 900px) {
+  .link__title {
+    line-height: 25px;
+    margin: 2% 0;
+  }
+}
+        .form-links {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .link-circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          background-color: $bg-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .form-link {
+          width: 80px;
+          padding-top: 0px; 
+        }
+
+        @media (max-width: 900px) {
+          .link-circle {
+            width: 75px;
+            height: 75px;
+          }
+          .form-link {
+            width: 70px;
+          }
+        }
+
         //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 
         .footer {
@@ -817,6 +992,7 @@ body {
           display: flex;
           flex-direction: row;
           gap: 20px;
+          align-items: center;
         }
 
         @media (max-width: 1000px) {
@@ -829,6 +1005,7 @@ body {
 
           .footer__links {
             margin-top: 9px;
+            align-items: center;
           }
         }
 
@@ -840,9 +1017,9 @@ body {
 
         .link-img {
           display: block;
-          padding-top: 10px;
+          //padding-top: 10px;
           position: relative;
-          left: -3px;
+          //left: -3px;
         }
 
         .fone {
