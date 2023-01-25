@@ -710,12 +710,12 @@ bottomsLeng.forEach(point => {
       num = 1;
       bottomsLeng[0].style.color = '#fff';
       bottomsLeng[2].style.color = '#beaf83';
-      video.src = './assets/video/foto-stroll.mp4';
+      //video.src = './assets/video/foto-stroll.mp4';
     } else if (point.classList[1] === "lengEn") {
       num = 0;
       bottomsLeng[2].style.color = '#fff';
       bottomsLeng[0].style.color = '#beaf83';
-      video.src = './assets/video/portfolio.mp4';
+      //video.src = './assets/video/portfolio.mp4';
     }
     
     heroName.textContent = contentVariants[".signature__title"][num];
