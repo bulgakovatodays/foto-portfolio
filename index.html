@@ -182,8 +182,8 @@
      </div>
 
      <div class="slider__errows">
-      <img src="./assets/icons/Left_White_Arrow.png" alt="errow-left" class="errow errow-left" width="75">    
-      <img src="./assets/icons/Right_Circled_Arrow.png" alt="errow-right" class="errow errow-right" width="75">    
+      <img src="./assets/icons/arrow_white.svg" alt="errow-left" class="errow errow-left" width="75">    
+      <img src="./assets/icons/arrow_white.svg" alt="errow-right" class="errow errow-right" width="75"> 
     </div>
     
     </section>
@@ -192,7 +192,7 @@
       <h2 class="section__title">Video</h2>
       <hr class="line">
       <!--<img class="video__temp" src="./assets/bigfoto/temp/video-player.jpg" alt="">-->
-      <video class="video__tape"><source class="video" src="./assets/video/foto-stroll.mp4"></video> //original file - "portfolio.mp4"
+      <video class="video__tape"><source class="video" src="./assets/video/foto-stroll.mp4"></video> <!--//original file - "portfolio.mp4"-->
 
       <img class="video__bottom play" src="./assets/icons/play-bottom.svg" alt="play-bottom" width="130">
     </section>
@@ -245,7 +245,26 @@
         </div>
 
       </div>
-    </section>
+
+    <div class="pop-up">
+      <form class="form prises-form">
+        <h2 class="section__title prises-form__title">Leave your contacts</h2>
+        <p class="prises-form__title">and I will connect with you resently:</p>
+
+        <div class="form__item">
+          <input id="formEmail1" class="form__input _email" autocomplete="off" name="E-mail" type="email" placeholder="E-mail" required>
+        </div>
+        <div class="form__item">
+          <input id="formPhone1" class="form__input _phone" autocomplete="off" name="Phone" type="tel" placeholder="Phone (format: 3803456789)" maxlength="10" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form__item item-messege">
+          <input id="formMessage1" class="form__input _message placeholder-messege" autocomplete="off" name="Message" type="text" placeholder="Comment" required>
+        </div>
+        <button class="form__button prises-form__button">Send message</button>
+      </form>
+    </div>
+
+  </section>
 
     <section class="section section-contacts" id="Contacts">
 
@@ -256,8 +275,8 @@
                 srcset="./assets/bigfoto/contacts-white.jpg">
         <source class="contact-foto" 
                 media="(min-width: 650.1px) and (max-width: 1000px)" 
-                srcset="./assets/bigfoto/contacts-white.jpg">
-        <img class="contact-foto" src="./assets/bigfoto/contacts-big.jpg" alt="contact-foto">
+                srcset="./assets/bigfoto/contacts-small(r).jpg">
+        <img class="contact-foto" src="./assets/bigfoto/contacts-big(rr).jpg" alt="contact-foto">
 
       </picture>
 

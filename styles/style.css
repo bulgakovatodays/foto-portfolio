@@ -17,7 +17,7 @@ body {
   position: relative;
   width: 100%;
   background-color: #000;
-  color: #fff;
+  color: #fdf9f1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,9 +60,7 @@ body {
 }
 
 .navig {
-
   width: 50%;
-
   position: relative;
   right: 1.4%;
   align-items: center;
@@ -72,17 +70,13 @@ body {
 
 @media (min-width: 800px) and (max-width: 1200px) {
   .navig {
-
     width: 70%;
-
     position: relative;
     right: 68px;
   }
 }
 
-
 @media (min-width: 600px) and (max-width: 835.9px) {
-
   .navig {
     width: 20%;
     position: relative;
@@ -104,9 +98,7 @@ body {
   align-items: center;
 }
 
-
 @media (max-width: 835.9px) {
-
   .nav {
     position: absolute;
     top: 0px;
@@ -147,13 +139,11 @@ body {
 
 .nav-link {
   text-decoration: none;
-  color: #fff;
+  color: #fdf9f1;
 }
 
 .nav-link:hover {
-
   color: #beaf83;
-
 }
 
 .leng {
@@ -163,9 +153,7 @@ body {
   gap: 8px;
 }
 
-
 @media (max-width: 835.9px) {
-
   .leng {
     width: 51%;
   }
@@ -176,9 +164,7 @@ body {
 }
 
 .leng__var:hover {
-
   color: #beaf83;
-
   cursor: pointer;
 }
 
@@ -187,15 +173,12 @@ body {
 }
 
 @media screen and (min-width: 836px) {
-
   .burger {
     display: none;
   }
 }
 
-
 @media (max-width: 835.9px) {
-
   .burger {
     display: block;
     width: 50px;
@@ -204,12 +187,10 @@ body {
     z-index: 5;
   }
   .burger:hover {
-
     color: #beaf83;
-
   }
   .burger__line {
-    background-color: #fff;
+    background-color: #fdf9f1;
     display: block;
     width: 100%;
     height: 3px;
@@ -256,9 +237,7 @@ body {
   margin-top: 100px;
 }
 
-
 @media (min-width: 650px) and (max-width: 999.9px) {
-
   .section {
     margin-top: 60px;
   }
@@ -357,8 +336,12 @@ body {
 .signature__button {
   width: 85%;
   height: 16.5%;
+  padding: 2px;
   position: relative;
   bottom: 0px;
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 700;
   background-color: #beaf83;
   margin-top: 37px;
   display: flex;
@@ -367,6 +350,10 @@ body {
   align-self: center;
   font-size: 2.5vw;
   cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 6px;
+  object-fit: cover;
+  text-align: center;
 }
 
 @media (min-width: 700px) and (max-width: 800px) {
@@ -387,7 +374,7 @@ body {
 }
 
 .signature__button:hover {
-  color: #fff;
+  color: #fdf9f1;
 }
 
 .section__title {
@@ -537,7 +524,6 @@ body {
   gap: 25px;
 }
 
-
 .slider__errows {
   position: absolute;
   width: 97%;
@@ -545,6 +531,10 @@ body {
   display: flex;
   justify-content: space-between;
   top: 60%;
+}
+
+.errow-right {
+  transform: rotate(180deg);
 }
 
 @media (min-width: 750.1px) and (max-width: 1000px) {
@@ -617,7 +607,6 @@ body {
 .slider3__img {
   opacity: 0;
 }
-
 
 .slider-box {
   display: inline-block;
@@ -706,6 +695,8 @@ body {
   justify-content: center;
   padding-top: 43px;
   padding-bottom: 40px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 @media (max-width: 1000px) {
@@ -772,11 +763,13 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 50px;
-  height: 55px;
+  min-height: 55px;
   width: 50%;
   margin: 39px auto 0px auto;
   background-color: #beaf83;
   cursor: pointer;
+  border-radius: 5px;
+  object-fit: cover;
 }
 
 @media (max-width: 1000px) {
@@ -787,9 +780,77 @@ body {
 }
 
 .prise-variant__button:hover {
-  color: #fff;
+  color: #fdf9f1;
 }
 
+.pop-up {
+  position: fixed;
+  left: -50000px;
+  width: 80%;
+  background-color: #fdf9f1;
+  padding: 0;
+  border-radius: 6px;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.pop-up-active {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  background-color: #fdf9f1;
+  padding: 0;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+@media (min-width: 1000px) {
+  .pop-up-active {
+    width: 60%;
+    left: 20%;
+  }
+}
+
+.form.prises-form {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.prises-form__title {
+  font-family: 'Merriweather', serif;
+  font-size: 40px;
+  font-weight: 700;
+  font-size: 4vw;
+  line-height: 100%;
+  padding: 0 20px;
+  color: #000;
+  background-color: #fdf9f1;
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .prises-form__title {
+    line-height: 120%;
+  }
+}
+
+.section__title.prises-form__title {
+  margin-top: 30px;
+  font-size: 4.5vw;
+}
+
+.form__button.prises-form__button {
+  margin-bottom: 30px;
+}
 
 .contact-foto {
   width: 99.5%;
@@ -803,10 +864,10 @@ body {
 
 .form {
   color: #000;
-  width: 40%;
+  width: 45%;
   position: absolute;
-  left: 1%;
-  top: 3%;
+  left: 5%;
+  top: 15%;
 }
 
 @media (max-width: 1100px) {
@@ -839,6 +900,8 @@ body {
   margin: 20px 0;
   background-color: transparent;
   border: 3px solid #000;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 @media (max-width: 1100px) {
@@ -869,15 +932,14 @@ body {
   color: #000;
 }
 
-.form__input::-webkit-input-placeholder {
-  color: #000;
-}
-
 .placeholder-messege::-moz-placeholder {
   color: #000;
-
   position: relative;
   top: -25px;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #000;
 }
 
 .placeholder-messege::-webkit-input-placeholder {
@@ -897,6 +959,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 @media (max-width: 1100px) {
@@ -909,7 +973,7 @@ body {
 }
 
 .form__button:hover {
-  color: #fff;
+  color: #fdf9f1;
 }
 
 .link__title {
@@ -1001,7 +1065,7 @@ body {
 
 .git-link {
   text-decoration: none;
-  color: #fff;
+  color: #fdf9f1;
   cursor: pointer;
 }
 
