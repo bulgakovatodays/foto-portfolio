@@ -30,10 +30,11 @@ burger.addEventListener('click', () => {
 });
 
 fone.addEventListener('click', () => {
-  burger.classList.toggle('burger_active');
-  nav.classList.toggle('nav-active');
-  fone.classList.toggle('fone-active');
+  burger.classList.remove('burger_active');
+  nav.classList.remove('nav-active');
+  fone.classList.remove('fone-active');
   //console.log('fone');
+  popUp.classList.remove('pop-up-active');
 });
 
 navPoints.forEach(point => {
@@ -44,6 +45,27 @@ navPoints.forEach(point => {
     //console.log('navPoints');
   });
 })
+
+
+
+// цена - выезжает поп-ап с заявкой на звонок: имя/телефон/желаемая дата съемки
+
+
+//const fone = document.querySelector('.fone');
+const priseButtons = document.querySelectorAll(".prise-variant__button");
+const popUp = document.querySelector(".pop-up");
+
+priseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    popUp.classList.toggle('pop-up-active');
+    fone.classList.toggle('fone-active');
+    //console.log('nav-active');
+    //popUp.style.top = button.getBoundingClientRect().top + 'px';
+    console.log(popUp.style.top);
+  });
+
+});
+
 
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 // наведение на лого, плей и линки
@@ -70,6 +92,18 @@ play.addEventListener('mouseout', () => {
   play.src = './assets/icons/play-bottom.svg';
 });
 
+
+const errows = document.querySelectorAll('.errow');
+
+errows.forEach(errow => {
+  errow.addEventListener('mouseover', () => {
+    errow.src = './assets/icons/arrow_brown.svg';
+  });
+
+  errow.addEventListener('mouseout', () => {
+    errow.src = './assets/icons/arrow_white.svg';
+  });
+})
 
 const links = document.querySelectorAll('.link-img');
 const linksAlt = [
@@ -128,8 +162,7 @@ links.forEach(link => {
 
 const heroButtom = document.querySelector(".signature__button");
 heroButtom.addEventListener('click', () => {
-  console.log('Go to form!');
-  window.location.hash="form";
+  window.location.hash="Price";
 })
 
 
@@ -138,7 +171,7 @@ heroButtom.addEventListener('click', () => {
 // XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 const themesPoints = document.querySelectorAll(".themes-list__point");
-const errows = document.querySelectorAll('.errow');
+
 const slider = document.querySelectorAll('.slider');
 const sliderBloks = document.querySelectorAll('.slider__blok');
 const slider1Imgs = document.querySelectorAll('.slider1__img');
@@ -203,19 +236,19 @@ themesPoints.forEach(element => {
     });
     element.classList.add('chouse-point');
 
-    if (element.textContent === 'Family') {
+    if (element.textContent === 'Family' || element.textContent === 'Семья') {
       chousenCategory = category[0];
       console.log(chousenCategory);
 
       makeShotList();
 
-    } else if (element.textContent === 'Portrait') {
+    } else if (element.textContent === 'Portrait' || element.textContent === 'Портрет') {
       chousenCategory = category[1];
       console.log(chousenCategory);
 
       makeShotList();
 
-    } else if (element.textContent === 'Reportage') {
+    } else if (element.textContent === 'Reportage' || element.textContent === 'Репортаж') {
       chousenCategory = category[2];
       console.log(chousenCategory);
 
@@ -358,8 +391,6 @@ play.addEventListener('click', () => {
 
   play.classList.toggle("video__bottom-active");
 });
-
-// цена - выезжает поп-ап с заявкой на звонок: имя/телефон/желаемая дата съемки
 
 // контакт - запрос на звонок
 
@@ -696,7 +727,7 @@ const priseTitles = document.querySelectorAll(".prise-variant__title");
 const prise1 = document.querySelectorAll(".prise1");
 const prise2 = document.querySelectorAll(".prise2");
 const prise3 = document.querySelectorAll(".prise3");
-const priseButtons = document.querySelectorAll(".prise-variant__button");
+
 const formInputs = document.querySelectorAll(".form__input");
 const formButton = document.querySelector(".form__button");
 const linkTitle = document.querySelector(".link__title");
