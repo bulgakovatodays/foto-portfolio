@@ -263,7 +263,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 5%;
 }
 
 @media (min-width: 650px) and (max-width: 999.9px) {
@@ -437,7 +437,7 @@ body {
     grid-template-rows: 1fr 1fr;
     width: 83.5%;
     margin-top: 47px;
-    margin-bottom: 63px;
+    //margin-bottom: 63px;
   }
 }
 
@@ -874,7 +874,7 @@ body {
       //XXXXXXXXXXXXXXXXXXXXXXXX 
 
       .contact-foto {
-        width: 99.5%;
+        width: 99.9%;
       }
       @media (max-width: 1100px) {
         .section-contacts {
@@ -1044,7 +1044,7 @@ body {
 
         .footer {
           width: 100%;
-          padding: 50px 20px;
+          padding: 2% 20px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;

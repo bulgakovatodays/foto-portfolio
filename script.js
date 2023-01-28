@@ -561,6 +561,7 @@ let contentVariants = {
       "Portfolio", 
       "Video",
       "Price", 
+      "Contact me",
       "Contact me"
       ],
       [
@@ -568,6 +569,7 @@ let contentVariants = {
         "Портфолио",
         "Видео",
         "Цена",
+        "Дайте знать,",
         "Свяжитесь со мной"
       ]
   ],
@@ -689,6 +691,11 @@ let contentVariants = {
     "Заказать"
   ],
 
+  ".title-promise": [
+    "and I will connect with you soon:",
+    "и я свяжусь с Вами в ближайшее время:"
+  ],
+
   ".form__input": [
     [
     "E-mail",
@@ -724,12 +731,13 @@ const skillTitles = document.querySelectorAll(".skill__title");
 const skillTxt = document.querySelectorAll(".skill__txt");
 
 const priseTitles = document.querySelectorAll(".prise-variant__title");
+const titlePromise = document.querySelector(".title-promise");
 const prise1 = document.querySelectorAll(".prise1");
 const prise2 = document.querySelectorAll(".prise2");
 const prise3 = document.querySelectorAll(".prise3");
 
 const formInputs = document.querySelectorAll(".form__input");
-const formButton = document.querySelector(".form__button");
+const formButton = document.querySelectorAll(".form__button");
 const linkTitle = document.querySelector(".link__title");
 
 bottomsLeng.forEach(point => {
@@ -794,15 +802,22 @@ bottomsLeng.forEach(point => {
       element.textContent = contentVariants[".prise-variant__button"][num];
     });  //8
 
-    for (let index = 0; index < formInputs.length; index++) {
+    for (let index = 0; index < 3; index++) {
       formInputs[index].placeholder = contentVariants[".form__input"][num][index]; 
     }
+    for (let index = 3; index < 6; index++) {
+      formInputs[index].placeholder = contentVariants[".form__input"][num][index-3]; 
+    }
 
-    formButton.textContent = contentVariants[".form__button"][num];
+    titlePromise.textContent = contentVariants[".title-promise"][num];
 
-    linkTitle.textContent = contentVariants[".link__title"][num];
+    formButton.forEach(button => {
+      button.textContent = contentVariants[".form__button"][num];
+    })
+
+    //linkTitle.textContent = contentVariants[".link__title"][num];
   });
 
 });
 
-
+console.log(formButton);
