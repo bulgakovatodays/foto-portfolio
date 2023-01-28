@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/icons/camera 1.svg">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <a class="logo" href="#Hero"><img class="logo-img" src="./assets/icons/logo.svg" alt="logo" width="50"></a>
+    <nav class="navig">
+      <ul class="nav">
+        <li class="nav__point"><a class="nav-link" href="#Skills">Skills</a></li>
+        <li class="nav__point"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
+        <li class="nav__point"><a class="nav-link" href="#Video">Video</a></li>
+        <li class="nav__point"><a class="nav-link" href="#Price">Price</a></li>
+        <li class="nav__point"><a class="nav-link" href="#Contacts">Contacts</a></li>
+      </ul>
+
+      <div class="leng">
+        <p class="leng__var lengEn">en</p>
+        <p class="leng__var">/</p>
+        <p class="leng__var lengRu">ru</p>
+      </div>
+
+      <div class="burger">
+        <span class="burger__line first_line"></span>
+        <span class="burger__line second_line"></span>
+        <span class="burger__line third_line"></span>
+        <span class="burger__line fourth_line"></span>
+    </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="section section-head" id="Hero">
+
+  <picture class="box-foto">
+    <source class="bg-foto" media="(max-width: 800px)" srcset="./assets/bigfoto/hero-small.jpg">
+    <img class="bg-foto" src="./assets/bigfoto/hero.jpg" alt="foto fotograpf">
+  </picture>
+
+    
+      <!--<img src="./assets/bigfoto/bg.jpg" class="bg-foto" alt="bacground foto" width="1100">-->
+      <div class="signature">
+        <h1 class="signature__title">Svetlana Mormul</h1>
+        <p class="signature__txt">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Svetlana Mormul.</p> <!--Svetlana Mormul-->
+        <div class="signature__button">Book a photo shoot</div>
+      </div>
+    </section>
+
+    <section class="section section-skills" id="Skills">
+      <h2 class="section__title">Skills</h2>
+      <hr class="line">
+      <div class="skills">
+        <div class="skill">
+          <img class="skill__img" src="./assets/icons/camera 1.svg" alt="">
+          <p class="skill__title">Digital photography</p>
+          <p class="skill__txt">High-quality photos in the studio and on the nature</p>
+        </div>
+        <div class="skill">
+          <img class="skill__img" src="./assets/icons/video 1.svg" alt="">
+          <p class="skill__title">Video shooting</p>
+          <p class="skill__txt">Capture your moments so that they always stay with you</p>
+        </div>
+        <div class="skill">
+          <img class="skill__img" src="./assets/icons/image 1.svg" alt="">
+          <p class="skill__title">Retouch</p>
+          <p class="skill__txt">I strive to make photography surpass reality</p>
+        </div>
+        <div class="skill">
+          <img class="skill__img" src="./assets/icons/mic 1.svg" alt="">
+          <p class="skill__title">Audio</p>
+          <p class="skill__txt">Professional sounds recording for video, advertising, portfolio</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-portfolio" id="Portfolio">
+      <h2 class="section__title">Portfolio</h2>
+      <hr class="line">
+      <ul class="themes-list">
+
+        <li class="themes-list__point chouse-point">All</li>
+        <li class="themes-list__point">Family</li>
+        <li class="themes-list__point">Portrait</li>
+        <li class="themes-list__point">Reportage</li>
+        
+      </ul>
+     <div class="slider">
+      <div class="slider__blok unvisible-box">
+        <div class="slider-box">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/family/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/family/foto2.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/portrait/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/portrait/foto2.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/reportage/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img unvisible-img" src="./assets/bigfoto/reportage/foto2.jpg" alt="" width="450">
+        </div>       
+      </div>
+
+      <div class="slider__blok box-1">
+        <div class="slider-box">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/family/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/family/foto2.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/portrait/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/portrait/foto2.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/reportage/foto1.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider1__img" src="./assets/bigfoto/reportage/foto2.jpg" alt="" width="450">
+        </div>       
+      </div> 
+
+      <div class="slider__blok box-2">
+        <div class="slider-box">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/family/foto3.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/family/foto4.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/portrait/foto3.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/portrait/foto4.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/reportage/foto3.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider2__img" src="./assets/bigfoto/reportage/foto4.jpg" alt="" width="450">
+        </div>
+      </div>
+      
+      <div class="slider__blok box-3">
+        <div class="slider-box">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/family/foto5.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/family/foto6.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/portrait/foto5.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img2">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/portrait/foto6.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/reportage/foto5.jpg" alt="" width="450">
+        </div>
+        <div class="slider-box img3">
+          <img class="slider__img slider3__img" src="./assets/bigfoto/reportage/foto6.jpg" alt="" width="450">
+        </div>
+      </div>
+
+     </div>
+
+     <div class="slider__errows">
+      <img src="./assets/icons/arrow_white.svg" alt="errow-left" class="errow errow-left" width="75">    
+      <img src="./assets/icons/arrow_white.svg" alt="errow-right" class="errow errow-right" width="75"> 
+    </div>
+    
+    </section>
+
+    <section class="section section-video" id="Video">
+      <h2 class="section__title">Video</h2>
+      <hr class="line">
+      <!--<img class="video__temp" src="./assets/bigfoto/temp/video-player.jpg" alt="">-->
+      <video class="video__tape"><source class="video" src="./assets/video/foto-stroll.mp4"></video> <!--//original file - "portfolio.mp4"-->
+
+      <img class="video__bottom play" src="./assets/icons/play-bottom.svg" alt="play-bottom" width="130">
+    </section>
+
+    <section class="section section-price" id="Price">
+      <h2 class="section__title">Price</h2>
+      <hr class="line">
+      <div class="prises">
+        <div class="prise-variant">
+
+          <p class="prise-variant__title">Minimum</p>
+          <p class="prise-variant__price">500$</p>
+          <div class="prise-variant__txt">
+            <p class="prise-description prise1">One location</p>
+            <p class="prise-description prise1">120 photos in color</p>
+            <p class="prise-description prise1">12 photos in retouch</p>
+            <p class="prise-description prise1">Readiness 2-3 month</p>
+            <p class="prise-description prise1">Make up, visage</p>
+          </div>
+          <button class="prise-variant__button">Order shooting</button>
+        </div>
+
+        <div class="prise-variant">
+          <p class="prise-variant__title">Standard</p>
+          <p class="prise-variant__price">700$</p>
+          <div class="prise-variant__txt">
+            <p class="prise-description prise2">One or two locations</p>
+            <p class="prise-description prise2">200 photos in color</p>
+            <p class="prise-description prise2">20 photos in retouch</p>
+            <p class="prise-description prise2">Readiness 1-2 month</p>
+            <p class="prise-description prise2">Make up, visage</p>
+
+          </div>
+          <button class="prise-variant__button">Order shooting</button>
+        </div>
+
+        <div class="prise-variant">
+
+          <p class="prise-variant__title">Premium</p>
+          <p class="prise-variant__price">1000$</p>
+          <div class="prise-variant__txt">
+            <p class="prise-description prise3">Three locations or more</p>
+            <p class="prise-description prise3">300 photos in color</p>
+            <p class="prise-description prise3">50 photos in retouch</p>
+            <p class="prise-description prise3">Readiness 1 month</p>
+            <p class="prise-description prise3">Make up, visage, hairstyle</p>
+
+          </div>
+          <button class="prise-variant__button">Order shooting</button>
+        </div>
+
+      </div>
+
+    <div class="pop-up">
+      <form class="form prises-form">
+        <h2 class="section__title prises-form__title">Leave your contacts</h2>
+        <p class="prises-form__title title-promise">and I will connect with you soon:</p>
+
+        <div class="form__item">
+          <input id="formEmail1" class="form__input _email" autocomplete="off" name="E-mail" type="email" placeholder="E-mail" required>
+        </div>
+        <div class="form__item">
+          <input id="formPhone1" class="form__input _phone" autocomplete="off" name="Phone" type="tel" placeholder="Phone (format: 3803456789)" maxlength="10" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form__item item-messege">
+          <input id="formMessage1" class="form__input _message placeholder-messege" autocomplete="off" name="Message" type="text" placeholder="Comment" required>
+        </div>
+        <button class="form__button prises-form__button">Send message</button>
+      </form>
+    </div>
+
+  </section>
+
+    <section class="section section-contacts" id="Contacts">
+
+
+      <picture class="contact-foto">
+        <source class="contact-foto" 
+                media="(max-width: 650px)" 
+                srcset="./assets/bigfoto/contacts-white.jpg">
+        <source class="contact-foto" 
+                media="(min-width: 650.1px) and (max-width: 1000px)" 
+                srcset="./assets/bigfoto/contacts-small(r).jpg">
+        <img class="contact-foto" src="./assets/bigfoto/contacts-big(rr).jpg" alt="contact-foto">
+
+      </picture>
+
+      <!--<img class="contact-foto" src="./assets/bigfoto/contacts.jpg" alt="">-->
+
+        <form class="form" id="form">
+
+          <h2 class="section__title form__title">Contact me:</h2>
+
+          <div class="form__item">
+            <input id="formEmail" class="form__input _email" autocomplete="off" name="E-mail" type="email" placeholder="E-mail" required>
+          </div>
+          <div class="form__item">
+            <input id="formPhone" class="form__input _phone" autocomplete="off" name="Phone" type="tel" placeholder="Phone (format: 3803456789)" maxlength="10" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form__item item-messege">
+            <input id="formMessage" class="form__input _message placeholder-messege" autocomplete="off" name="Message" type="text" placeholder="Message" required>
+          </div>
+          <button class="form__button">Send message</button>
+
+          <!--
+          <div>
+            <p class="section__title link__title">The social networks:</p>
+            <div class="form-links">
+              <div class="link-circle">
+                <a href="https://www.instagram.com/svetlanamormul_photo/"><img class="link-img form-link" src="./assets/icons/instagram.svg" alt="link instagram"></a>
+              </div>
+              <div class="link-circle">
+                <a href="https://www.facebook.com/polinamormul/"><img class="link-img form-link" src="./assets/icons/facebook.svg" alt="link facebook"></a>
+              </div>  
+            </div>
+          </div>
+          -->
+        </form>
+
+    </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__creating">
+    <p>&#169;</p>
+    <p>2023</p>
+    <a href="https://github.com/bulgakovatodays" class="git-link">github</a>
+    <!--<a href="">dising</a>-->
+  </div>
+  <p>Rolling Scopes School</p>
+  <div class="footer__links">
+    <a href="https://www.instagram.com/svetlanamormul_photo/"><img class="link-img" src="./assets/icons/instagram.svg" alt="link instagram"></a>
+    <a href="https://www.facebook.com/polinamormul/"><img class="link-img" src="./assets/icons/facebook.svg" alt="link facebook"></a>
+
+  </div>
+</footer>
+<div class="fone"></div>
+<script src="./script.js"></script>
+</body>
+</html>
